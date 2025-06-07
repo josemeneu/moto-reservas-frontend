@@ -77,3 +77,117 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* --- Responsive para móviles --- */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+
+  #app {
+    padding: 0.5rem;
+    max-width: 100vw;
+  }
+
+  .menu-superior, .navbar, nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 0.5rem 0.2rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .menu-superior button, .navbar button, nav button, .menu-superior .cerrar-sesion {
+    font-size: 0.9em !important;
+    padding: 0.4em 0.8em !important;
+    margin: 0.2em 0 !important;
+  }
+
+  .card {
+    padding: 0.8em !important;
+    margin-bottom: 1em !important;
+  }
+
+  .card img, .moto-img, .moto-card img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.3em !important;
+  }
+
+  .modal, .reserva-modal, .calendar-modal {
+    width: 95vw !important;
+    max-width: 98vw !important;
+    padding: 1em 0.5em !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .calendar {
+    font-size: 0.95em !important;
+  }
+
+  .calendar button, .reserva-modal button {
+    font-size: 1em !important;
+    padding: 0.6em 1.2em !important;
+  }
+
+  .reservar-btn, .reserva-modal .reservar-btn {
+    width: 100% !important;
+    font-size: 1.1em !important;
+    margin-top: 1em !important;
+  }
+
+  .mis-reservas-lista, .reservas-lista {
+    padding: 0.5em !important;
+    gap: 0.5em !important;
+  }
+
+  .mis-reservas-container {
+    padding: 0.5em 0.2em !important;
+    margin: 8px auto !important;
+    max-width: 99vw !important;
+    border-radius: 8px !important;
+  }
+  .reserva-card {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 6px !important;
+    margin-bottom: 10px !important;
+    border-radius: 8px !important;
+    font-size: 0.98em !important;
+  }
+  .reserva-card h3 {
+    font-size: 1em !important;
+    margin-bottom: 0.4em !important;
+  }
+  .moto-img {
+    width: 70px !important;
+    height: 44px !important;
+    min-width: 50px !important;
+    min-height: 34px !important;
+    margin-right: 6px !important;
+    object-fit: contain !important;
+    border-radius: 5px !important;
+  }
+  .reserva-card p {
+    font-size: 0.95em !important;
+    margin: 0.2em 0 !important;
+  }
+  .reserva-card button {
+    padding: 0.4em 1em !important;
+    font-size: 0.95em !important;
+    margin-top: 0.6em !important;
+    width: 100%;
+  }
+  .activa, .inactiva {
+    font-size: 0.97em !important;
+  }
+}
+
