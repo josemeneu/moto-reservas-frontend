@@ -34,6 +34,10 @@
 import logo from '../assets/logo.png';
 import logo2 from '../assets/logo2.png';
 import { ref, computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import ReservaModal from './ReservaModal.vue';
+import UsuariosAdmin from './UsuariosAdmin.vue';
+import api from '../api';
 
 // Detecta modo oscuro por clase en el body o media query
 const isDark = ref(document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches)
