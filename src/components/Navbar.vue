@@ -71,6 +71,20 @@ function goDashboard(e) {
   border-radius: 0 0 12px 12px;
   font-size: 1.1em;
   transition: background 0.2s, color 0.2s;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .navbar-search {
+    margin: 0 auto 8px auto;
+    display: block;
+    max-width: 90vw;
+  }
 }
 
 .navbar-search {
