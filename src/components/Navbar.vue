@@ -7,6 +7,14 @@
     <router-link v-if="rol === 'SUPERADMIN'" to="/admin/usuarios">Gestión de usuarios</router-link>
     <button v-if="isLogged" @click="logout">Cerrar sesión</button>
     <router-link v-else to="/login">Login</router-link>
+    <input
+      class="navbar-search"
+      type="text"
+      :value="busqueda"
+      @input="setBusqueda($event.target.value)"
+      placeholder="Buscar motos..."
+      style="min-width: 180px; max-width: 270px; margin: 0 12px; padding: 6px 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1em; outline: none; box-shadow: 0 2px 8px #f1f5f9;"
+    />
     <button class="dark-toggle" @click="toggleDark">{{ isDark ? '🌙' : '☀️' }}</button>
   </nav>
 </template>
@@ -22,6 +30,11 @@ const store = useStore()
 const isLogged = computed(() => store.getters.isLogged)
 const username = computed(() => store.getters.username)
 const rol = computed(() => store.getters.rol)
+const busqueda = computed(() => store.getters.busqueda)
+
+function setBusqueda(valor) {
+  store.commit('setBusqueda', valor)
+}
 
 const isDark = ref(false)
 
@@ -59,6 +72,22 @@ function goDashboard(e) {
   font-size: 1.1em;
   transition: background 0.2s, color 0.2s;
 }
+
+.navbar-search {
+  min-width: 180px;
+  max-width: 270px;
+  margin: 0 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1em;
+  outline: none;
+  box-shadow: 0 2px 8px #f1f5f9;
+}
+.navbar-search:focus {
+  border: 1.5px solid #0ea5e9;
+}
+
 .navbar.dark {
   background: #23272f;
   color: #f1f1f1;
