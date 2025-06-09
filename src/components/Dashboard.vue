@@ -38,6 +38,7 @@ import { useStore } from 'vuex';
 import ReservaModal from './ReservaModal.vue';
 import UsuariosAdmin from './UsuariosAdmin.vue';
 import api from '../api';
+const store = useStore();
 
 // Detecta modo oscuro por clase en el body o media query
 const isDark = ref(document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -59,16 +60,10 @@ onMounted(() => {
 const logoActual = computed(() => isDark.value ? logo2 : logo)
 
 
-import { useStore } from 'vuex';
-import ReservaModal from './ReservaModal.vue';
-import UsuariosAdmin from './UsuariosAdmin.vue';
-import api from '../api';
 
 const mostrarUsuarios = ref(false);
 
 const motos = ref([]);
-import { useStore } from 'vuex';
-const store = useStore();
 const busqueda = computed(() => store.getters.busqueda);
 
 const motosFiltradas = computed(() => {
@@ -80,7 +75,6 @@ const motosFiltradas = computed(() => {
     (moto.precio && moto.precio.toString().includes(texto))
   );
 });
-const store = useStore();
 const isLogged = computed(() => store.getters.isLogged);
 const rol = computed(() => store.getters.rol);
 
