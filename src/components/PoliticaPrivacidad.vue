@@ -9,13 +9,7 @@
       <h3>2. PROCESAMIENTO DE DATOS PERSONALES</h3>
       <p>Sólo procesamos los datos personales que son importantes, adecuados, no excesivos y estrictamente necesarios según los fines previamente determinados.<br>
       Procesamos los datos personales que nos proporciona o que nosotros podemos recopilar cuando utiliza los Medios o los Servicios, en particular cuando:</p>
-      <ul>
-        <li>Utiliza los Medios</li>
-        <li>Crea una cuenta</li>
-        <li>Se suscribe a los Servicios</li>
-        <li>Utiliza los Servicios</li>
-        <li>Se pone en contacto con el Servicio de atención al cliente u otro servicio para hacer una pregunta, ejercitar un derecho o presentar una reclamación</li>
-      </ul>
+      <p>Esto incluye: utilizar los Medios, crear una cuenta, suscribirse a los Servicios, utilizar los Servicios, o ponerse en contacto con el Servicio de atención al cliente u otro servicio para hacer una pregunta, ejercitar un derecho o presentar una reclamación.</p>
       <p>En dichos casos, recogeremos y procesaremos los siguientes datos personales que le conciernen en su totalidad o en parte:</p>
       <ul>
         <li>Su identidad: estado civil, apellido, nombre, fecha de nacimiento, foto (según su criterio)</li>
@@ -101,6 +95,7 @@
 
 <style scoped>
 .legal-container {
+  text-align: justify;
   font-family: Arial, sans-serif;
   margin: 2em auto;
   max-width: 900px;
