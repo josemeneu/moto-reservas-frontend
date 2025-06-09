@@ -1,13 +1,21 @@
 <template>
   <div class="dashboard">
     <img :src="logoActual" alt="VALRIDE Logo" class="dashboard-logo" />
+    <div class="buscador-motos">
+      <input
+        v-model="busqueda"
+        type="text"
+        placeholder="Buscar motos por nombre, descripción o precio..."
+        class="input-busqueda"
+      />
+    </div>
     <button v-if="rol === 'SUPERADMIN'" class="btn-admin" @click="mostrarUsuarios = !mostrarUsuarios">
       {{ mostrarUsuarios ? 'Ocultar gestión de usuarios' : 'Gestionar usuarios' }}
     </button>
     <UsuariosAdmin v-if="rol === 'SUPERADMIN' && mostrarUsuarios" />
     <div class="motos-grid">
       <div
-        v-for="moto in motos"
+        v-for="moto in motosFiltradas"
         :key="moto.id"
         class="moto-card"
         :class="{ alquilada: moto.alquilada }"
@@ -63,6 +71,17 @@ import api from '../api';
 const mostrarUsuarios = ref(false);
 
 const motos = ref([]);
+const busqueda = ref('');
+
+const motosFiltradas = computed(() => {
+  if (!busqueda.value.trim()) return motos.value;
+  const texto = busqueda.value.toLowerCase();
+  return motos.value.filter(moto =>
+    (moto.nombre && moto.nombre.toLowerCase().includes(texto)) ||
+    (moto.descripcion && moto.descripcion.toLowerCase().includes(texto)) ||
+    (moto.precio && moto.precio.toString().includes(texto))
+  );
+});
 const store = useStore();
 const isLogged = computed(() => store.getters.isLogged);
 const rol = computed(() => store.getters.rol);
@@ -109,6 +128,25 @@ function cerrarReserva() {
   max-width: 1200px;
   margin: 0 auto;
   transition: background 0.2s, color 0.2s;
+}
+.buscador-motos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.input-busqueda {
+  width: 100%;
+  max-width: 420px;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 1.05rem;
+  outline: none;
+  transition: border 0.2s;
+  box-shadow: 0 2px 8px #f1f5f9;
+}
+.input-busqueda:focus {
+  border: 1.5px solid #0ea5e9;
 }
 .dashboard-logo {
   display: block;
