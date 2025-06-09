@@ -38,6 +38,7 @@
 <style scoped>
 .legal-container {
   text-align: justify;
+  text-align: justify;
   font-family: Arial, sans-serif;
   margin: 2em auto;
   max-width: 900px;
@@ -56,5 +57,8 @@ ul {
   margin-top: 2em;
   color: #888;
   font-size: 0.95em;
+}
+p {
+  color: #23272f !important;
 }
 </style>
