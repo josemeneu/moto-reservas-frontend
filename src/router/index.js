@@ -5,6 +5,8 @@ import MisReservas from '../components/MisReservas.vue'
 import ReservasAdmin from '../components/ReservasAdmin.vue'
 import Register from '../components/Register.vue'
 import LoginRegisterWrapper from '../components/LoginRegisterWrapper.vue'
+import PoliticaPrivacidad from '../components/PoliticaPrivacidad.vue'
+import AvisoLegal from '../components/AvisoLegal.vue'
 
 const routes = [
   { path: '/', redirect: '/auth' },
@@ -13,7 +15,9 @@ const routes = [
   { path: '/login', component: Login }, // fallback
   { path: '/register', component: Register }, // fallback
   { path: '/mis-reservas', component: MisReservas, meta: { requiresAuth: true } },
-  { path: '/admin/reservas', component: ReservasAdmin, meta: { requiresAuth: true, adminOnly: true } }
+  { path: '/admin/reservas', component: ReservasAdmin, meta: { requiresAuth: true, adminOnly: true } },
+  { path: '/politica-privacidad', component: PoliticaPrivacidad },
+  { path: '/aviso-legal', component: AvisoLegal }
 ]
 
 const router = createRouter({
