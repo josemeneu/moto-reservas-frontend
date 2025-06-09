@@ -4,6 +4,7 @@ export default createStore({
   state: {
     token: localStorage.getItem('token') || '',
     rol: localStorage.getItem('rol') || '',
+    busqueda: '', // Búsqueda global de motos
 
   },
   getters: {
@@ -17,6 +18,7 @@ export default createStore({
       }
     },
     rol: state => state.rol,
+    busqueda: state => state.busqueda,
 
   },
   mutations: {
@@ -27,9 +29,13 @@ export default createStore({
       localStorage.setItem('rol', rol)
     },
 
+    setBusqueda(state, busqueda) {
+      state.busqueda = busqueda
+    },
     logout(state) {
       state.token = ''
       state.rol = ''
+      state.busqueda = ''
 
       localStorage.removeItem('token')
       localStorage.removeItem('rol')
