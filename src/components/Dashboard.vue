@@ -1,6 +1,14 @@
 <template>
   <div class="dashboard">
     <img :src="logoActual" alt="VALRIDE Logo" class="dashboard-logo" />
+    <div class="buscador-motos">
+      <input
+        v-model="busqueda"
+        type="text"
+        placeholder="Buscar motos por nombre, descripción o precio..."
+        class="input-busqueda"
+      />
+    </div>
     <button v-if="rol === 'SUPERADMIN'" class="btn-admin" @click="mostrarUsuarios = !mostrarUsuarios">
       {{ mostrarUsuarios ? 'Ocultar gestión de usuarios' : 'Gestionar usuarios' }}
     </button>
@@ -64,7 +72,7 @@ const logoActual = computed(() => isDark.value ? logo2 : logo)
 const mostrarUsuarios = ref(false);
 
 const motos = ref([]);
-const busqueda = computed(() => store.getters.busqueda);
+const busqueda = ref('');
 
 const motosFiltradas = computed(() => {
   if (!busqueda.value.trim()) return motos.value;
