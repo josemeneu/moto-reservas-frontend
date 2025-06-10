@@ -52,13 +52,10 @@ const store = useStore();
 const isDark = ref(document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 onMounted(() => {
-  // Observa cambios en la clase del body (útil si usas toggle en la app)
   const observer = new MutationObserver(() => {
     isDark.value = document.body.classList.contains('dark') || window.matchMedia('(prefers-color-scheme: dark)').matches
   })
   observer.observe(document.body, { attributes: true, attributeFilter: ['class'] })
-
-  // Observa cambios por media query del sistema
   const mq = window.matchMedia('(prefers-color-scheme: dark)')
   mq.addEventListener('change', e => {
     isDark.value = document.body.classList.contains('dark') || e.matches

@@ -1,5 +1,23 @@
-# Vue 3 + Vite
+# Moto Reservas Frontend
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este proyecto es el frontend de la aplicación de reservas de motos, desarrollado en Vue 3 y Vite.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Requisitos
+
+- Node.js 18 o superior
+- npm (incluido con Node.js)
+- Tener el backend corriendo y accesible (ver instrucciones en el repo backend)
+
+## Instalación y ejecución en local
+
+1. **Clona el repositorio**  
+   git clone [https://github.com/tu-usuario/moto-reservas-frontend.git](https://github.com/tu-usuario/moto-reservas-frontend.git)
+   cd moto-reservas-frontend
+Instala las dependencias
+- npm install
+Configura la URL de la API
+Crea un archivo .env en la raíz del proyecto con la siguiente variable (ajusta el puerto si es necesario):
+- VITE_API_URL=http://localhost:8080
+
+Inicia el servidor de desarrollo con el comando en la terminal
+npm run dev
