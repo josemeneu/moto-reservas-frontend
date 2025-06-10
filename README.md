@@ -18,6 +18,6 @@ Instala las dependencias
 Configura la URL de la API
 Crea un archivo .env en la raíz del proyecto con la siguiente variable (ajusta el puerto si es necesario):
 - VITE_API_URL=http://localhost:8080
-
+CopyInsert in Terminal
 Inicia el servidor de desarrollo con el comando en la terminal
 npm run dev
